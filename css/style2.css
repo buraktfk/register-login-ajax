@@ -1,0 +1,49 @@
+header{
+  width: 100%;
+}
+
+header .nav-link{
+  font-size: 18px;
+  font-family: sans-serif;
+}
+
+#header{
+  height: auto;
+  width: 100%;
+  
+  -webkit-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+box-shadow: -1px 3px 5px 0px rgba(0,0,0,0.75);
+}
+
+.carousel{
+      margin-top: 30px;
+    border: 2px solid #b59696;
+    border-radius: 4px;
+}
+#ust-yazi .row{
+  width: 70%;
+  margin: auto;
+}
+
+#ust-yazi .row p{
+  margin-top:30px !important; 
+margin: auto;
+font-size: 26px;
+
+}
+
+#ust-yazi .row span{
+  font-size: 22px;
+  margin: auto;
+  color: grey;
+}
+
+.card{
+  margin-top:50px !important; 
+}
+
+form:first-child{
+text-align: center !important;
+color: green;
+}
