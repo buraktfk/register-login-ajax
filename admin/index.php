@@ -24,6 +24,9 @@ if (isset($_SESSION["yetki"])) {
     <link href="assets/css/now-ui-dashboard.css?v=1.0.1" rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="assets/demo/demo.css" rel="stylesheet" />
+       <link rel="stylesheet" type="text/css" href="../css/sweetalert2.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="../js/sweetalert2.min.js"></script> 
 </head>
 
 <body class="">
@@ -89,22 +92,10 @@ if (isset($_SESSION["yetki"])) {
                                     </p>
                                 </a>
                             </li>
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                    <i class="now-ui-icons location_world"></i>
-                                    <p>
-                                        <span class="d-lg-none d-md-block">Some Actions</span>
-                                    </p>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                                    <a class="dropdown-item" href="#">Action</a>
-                                    <a class="dropdown-item" href="#">Another action</a>
-                                    <a class="dropdown-item" href="#">Something else here</a>
-                                </div>
-                            </li>
+                           
                             <li class="nav-item">
                                 <a class="nav-link" href="#pablo">
-                                    <i class="now-ui-icons users_single-02"></i>
+                                    <button onclick="cikis()" class="btn btn-neutral" type="submit">Çıkış Yap</button>
                                     <p>
                                         <span class="d-lg-none d-md-block">Account</span>
                                     </p>
@@ -114,6 +105,32 @@ if (isset($_SESSION["yetki"])) {
                     </div>
                 </div>
             </nav>
+            <script>
+function cikis()
+{
+    
+
+$.ajax(
+        {       
+            type: "POST",
+            url:  "../cikis.php",
+            success: function(sonuc){
+                if(sonuc == 'cikis')
+                {
+                   swal("Çıkış Yaptınız..","", "success");
+                     setTimeout(function () {
+       window.location.href = "../logres.php"; }, 2000);
+                }
+
+                else{
+
+                    swal("Giriş Başarısız !","", "error");
+                }  
+            }
+        })
+}
+
+</script>
             <!-- End Navbar -->
             <div class="panel-header panel-header-lg">
                 <canvas id="bigDashboardChart"></canvas>
